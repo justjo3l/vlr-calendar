@@ -65,6 +65,8 @@ def find_event_matches(id):
         date_matches = date.find_next_sibling('div', 'wf-card').find_all('a')
         for date_match in date_matches:
             date_match_time = date_match.find('div', 'match-item-time')
+            if (date_match_time is None or 'TBD' in remove_indents(date_match_time.text)):
+                continue
             match_date = get_date(date, date_match_time)
             match_teams = date_match.find('div', 'match-item-vs').find_all('div', 'match-item-vs-team')
             match_team1 = Team(remove_formatting(match_teams[0].div.div.text))
