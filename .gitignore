@@ -2,3 +2,4 @@ secrets
 token.pickle
 cal_utils/__pycache__
 vlr_utils/__pycache__
+cal_utils/classes/__pycache__
