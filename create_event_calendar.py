@@ -4,7 +4,7 @@ from cal_utils.create_event import create_event
 from cal_utils.cal_list import list_calendars
 from cal_utils.delete_calendar import delete_calendar
 
-timeZone = "Asia/Dubai"
+timeZone = "Australia/Sydney"
 
 def main():
     # Ask user for event ID
