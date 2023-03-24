@@ -26,13 +26,16 @@ def main():
     calendar_id = create_calendar(event.title, event.subtitle, timeZone)
 
     for match in event.matches:
-        match_title = match.team1.name + " vs " + match.team2.name
-        match_subtitle = match.round + " - " + match.stage
-        match_start_time = match.time
-        match_length = match.length
+        if (match.team1.name != "TBD" and match.team2.name != "TBD"):
+            match_title = match.team1.name + " vs " + match.team2.name
+            match_subtitle = match.round + " - " + match.stage
+            match_start_time = match.time
+            match_length = match.length
 
-        # Create a new event
-        create_event(calendar_id, match_title, match_subtitle, match_start_time, match_length, timeZone)
+            # Create a new event
+            create_event(calendar_id, match_title, match_subtitle, match_start_time, match_length, timeZone)
+        else:
+            print("TBD match found, skipping")
 
 if __name__ == '__main__':
     main()
